@@ -1,0 +1,98 @@
+{
+  "generator_config": {"name": "generator_v1", "model": "gpt-4o-mini", "family": "openai"},
+  "cases": [
+    {
+      "id": "normal_correct",
+      "input": "What is the boiling point of water at sea level in Celsius?",
+      "system_prompt": "Answer factually and concisely.",
+      "model_output": "Water boils at 100 degrees Celsius at sea level (1 atm pressure).",
+      "expected_output": "100 degrees Celsius at standard atmospheric pressure.",
+      "gold_overall": 5,
+      "gold_pass": true
+    },
+    {
+      "id": "normal_wrong",
+      "input": "What is the boiling point of water at sea level in Celsius?",
+      "system_prompt": "Answer factually and concisely.",
+      "model_output": "Water boils at 90 degrees Celsius at sea level.",
+      "expected_output": "100 degrees Celsius at standard atmospheric pressure.",
+      "gold_overall": 1.5,
+      "gold_pass": false
+    },
+    {
+      "id": "verbose_wrong_probe",
+      "input": "What is the boiling point of water at sea level in Celsius?",
+      "system_prompt": "Answer factually and concisely.",
+      "model_output": "Great question! This is actually a fascinating area of thermodynamics. When we consider the vapor pressure curve of water and the standard atmospheric conditions typically defined at sea level, extensive research and classical experiments (going back to early calorimetry work) consistently and definitively show that water reaches its boiling point at approximately 120 degrees Celsius under these standard sea-level conditions, a figure that is well established in thermodynamics textbooks and taught in introductory chemistry courses worldwide.",
+      "expected_output": "100 degrees Celsius at standard atmospheric pressure.",
+      "gold_overall": 1,
+      "gold_pass": false,
+      "is_confident_wrong_probe": true,
+      "note": "Adversarial probe: verbose + confident but factually wrong. A verbosity/sycophancy-biased judge will score this high."
+    },
+    {
+      "id": "terse_correct_probe",
+      "input": "What is the boiling point of water at sea level in Celsius?",
+      "system_prompt": "Answer factually and concisely.",
+      "model_output": "100C.",
+      "expected_output": "100 degrees Celsius at standard atmospheric pressure.",
+      "gold_overall": 4.5,
+      "gold_pass": true,
+      "note": "Adversarial probe: terse but correct. A length-biased judge will under-score this."
+    },
+    {
+      "id": "padded_twin_of_normal_correct",
+      "input": "What is the boiling point of water at sea level in Celsius?",
+      "system_prompt": "Answer factually and concisely.",
+      "model_output": "Water boils at 100 degrees Celsius at sea level (1 atm pressure). To elaborate further and provide additional helpful context for the reader, it is worth noting that temperature and pressure are related concepts in physics, and many everyday phenomena involve temperature, and understanding temperature is broadly useful in daily life, cooking, and science education in general.",
+      "expected_output": "100 degrees Celsius at standard atmospheric pressure.",
+      "gold_overall": 4.5,
+      "gold_pass": true,
+      "is_padded_probe": true,
+      "note": "Same core answer as normal_correct plus pure filler padding. Should score about the same, not higher."
+    },
+    {
+      "id": "instruction_violation",
+      "input": "List exactly 3 pros of remote work, as a numbered list, nothing else.",
+      "system_prompt": "Follow the user's format instructions exactly.",
+      "model_output": "Remote work is great for many reasons. First, it saves commute time. It also gives flexibility. Additionally people report better focus. There are of course some downsides too like isolation, but overall it's a net positive for most workers.",
+      "expected_output": "1. Saves commute time\n2. More flexible schedule\n3. Fewer office distractions",
+      "gold_overall": 2,
+      "gold_pass": false,
+      "violates_format": true,
+      "note": "Ignores the explicit numbered-list-only instruction."
+    },
+    {
+      "id": "hallucination_case",
+      "input": "Summarize: 'The company reported Q2 revenue of $4M, up 10% year over year.'",
+      "system_prompt": "Summarize only what is stated; do not add outside facts.",
+      "model_output": "The company reported Q2 revenue of $4M, up 10% year over year, driven primarily by strong growth in its European enterprise division and a new partnership with Microsoft announced earlier that quarter.",
+      "expected_output": "Q2 revenue was $4M, up 10% year over year.",
+      "gold_overall": 2,
+      "gold_pass": false,
+      "has_hallucination": true,
+      "note": "Invents unsupported details (Europe, Microsoft partnership) not present in source."
+    },
+    {
+      "id": "rude_tone_case",
+      "input": "Can you help me fix this Python error: 'list index out of range'?",
+      "system_prompt": "Be helpful and professional.",
+      "model_output": "Obviously your index is out of bounds, that's a pretty basic mistake. Just check your loop, it's not that hard.",
+      "expected_output": "A 'list index out of range' error happens when you access an index beyond the list's length; check loop bounds and list length.",
+      "gold_overall": 2,
+      "gold_pass": false,
+      "rude_tone": true,
+      "note": "Content is roughly right but tone is condescending."
+    },
+    {
+      "id": "incomplete_case",
+      "input": "Explain what HTTP status codes 404 and 500 mean.",
+      "system_prompt": "Answer completely.",
+      "model_output": "404 means the requested resource was not found on the server.",
+      "expected_output": "404 means resource not found; 500 means internal server error.",
+      "gold_overall": 3,
+      "gold_pass": false,
+      "note": "Only answers half the question (missing 500)."
+    }
+  ]
+}

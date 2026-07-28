@@ -1,0 +1,46 @@
+{
+  "config_a": {"name": "prompt_v1", "model": "gpt-4o-mini", "family": "openai"},
+  "config_b": {"name": "prompt_v2", "model": "gpt-4o-mini", "family": "openai"},
+  "pairs": [
+    {
+      "id": "pair_1_format",
+      "input": "List exactly 3 pros of remote work, as a numbered list, nothing else.",
+      "system_prompt": "Follow the user's format instructions exactly.",
+      "output_a": "Remote work is great for many reasons. It saves commute time, gives flexibility, and helps focus.",
+      "output_b": "1. Saves commute time\n2. More flexible schedule\n3. Fewer office distractions",
+      "expected_output": "1. Saves commute time\n2. More flexible schedule\n3. Fewer office distractions"
+    },
+    {
+      "id": "pair_2_completeness",
+      "input": "Explain what HTTP status codes 404 and 500 mean.",
+      "system_prompt": "Answer completely.",
+      "output_a": "404 means the requested resource was not found on the server.",
+      "output_b": "404 means the resource wasn't found on the server; 500 means the server hit an internal error while processing the request.",
+      "expected_output": "404 means resource not found; 500 means internal server error."
+    },
+    {
+      "id": "pair_3_faithfulness",
+      "input": "Summarize: 'The company reported Q2 revenue of $4M, up 10% year over year.'",
+      "system_prompt": "Summarize only what is stated; do not add outside facts.",
+      "output_a": "Q2 revenue was $4M, up 10% year over year, thanks to strong European sales.",
+      "output_b": "Q2 revenue was $4M, up 10% year over year.",
+      "expected_output": "Q2 revenue was $4M, up 10% year over year."
+    },
+    {
+      "id": "pair_4_tone",
+      "input": "Can you help me fix this Python error: 'list index out of range'?",
+      "system_prompt": "Be helpful and professional.",
+      "output_a": "That's a basic mistake, just check your loop bounds.",
+      "output_b": "That error happens when you access an index beyond the list's length -- double-check your loop bounds and the list's actual size.",
+      "expected_output": "404-style explanation of index errors and how to fix loop bounds."
+    },
+    {
+      "id": "pair_5_correctness",
+      "input": "What is the boiling point of water at sea level in Celsius?",
+      "system_prompt": "Answer factually and concisely.",
+      "output_a": "Water boils at 90 degrees Celsius at sea level.",
+      "output_b": "Water boils at 100 degrees Celsius at sea level.",
+      "expected_output": "100 degrees Celsius at standard atmospheric pressure."
+    }
+  ]
+}

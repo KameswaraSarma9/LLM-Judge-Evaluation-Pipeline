@@ -1,0 +1,422 @@
+{
+  "bias_profile": "naive",
+  "judge_model": "claude-sonnet-4-6",
+  "judge_family": "anthropic",
+  "generator_family": "openai",
+  "judge_calls": 31,
+  "judge_tokens_est": 20266,
+  "pointwise_report": {
+    "n_cases": 9,
+    "n_parse_errors": 0,
+    "pass_rate": 0.556,
+    "mean_overall_score": 3.58,
+    "mean_per_criterion": {
+      "correctness": 3.37,
+      "faithfulness": 3.07,
+      "completeness": 2.89,
+      "instruction_following": 4.17,
+      "tone_safety": 4.41
+    },
+    "verdicts": [
+      {
+        "case_id": "normal_correct",
+        "verdict_id": "c38932f9",
+        "per_criterion": {
+          "correctness": {
+            "score": 4.75,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "faithfulness": {
+            "score": 4.75,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "completeness": {
+            "score": 4.75,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "instruction_following": {
+            "score": 4.55,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "tone_safety": {
+            "score": 4.75,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          }
+        },
+        "per_criterion_scores": {
+          "correctness": 4.75,
+          "faithfulness": 4.75,
+          "completeness": 4.75,
+          "instruction_following": 4.55,
+          "tone_safety": 4.75
+        },
+        "overall_score": 4.71,
+        "pass": true
+      },
+      {
+        "case_id": "normal_wrong",
+        "verdict_id": "ad00dfbd",
+        "per_criterion": {
+          "correctness": {
+            "score": 1.55,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "faithfulness": {
+            "score": 1.55,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "completeness": {
+            "score": 1.55,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "instruction_following": {
+            "score": 4.55,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "tone_safety": {
+            "score": 4.75,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          }
+        },
+        "per_criterion_scores": {
+          "correctness": 1.55,
+          "faithfulness": 1.55,
+          "completeness": 1.55,
+          "instruction_following": 4.55,
+          "tone_safety": 4.75
+        },
+        "overall_score": 2.79,
+        "pass": false
+      },
+      {
+        "case_id": "verbose_wrong_probe",
+        "verdict_id": "124026ac",
+        "per_criterion": {
+          "correctness": {
+            "score": 4.2,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "faithfulness": {
+            "score": 3.6,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "completeness": {
+            "score": 1.4,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "instruction_following": {
+            "score": 4.4,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "tone_safety": {
+            "score": 4.6,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          }
+        },
+        "per_criterion_scores": {
+          "correctness": 4.2,
+          "faithfulness": 3.6,
+          "completeness": 1.4,
+          "instruction_following": 4.4,
+          "tone_safety": 4.6
+        },
+        "overall_score": 3.64,
+        "pass": true
+      },
+      {
+        "case_id": "terse_correct_probe",
+        "verdict_id": "88dca514",
+        "per_criterion": {
+          "correctness": {
+            "score": 3.75,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "faithfulness": {
+            "score": 4.75,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "completeness": {
+            "score": 2.25,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "instruction_following": {
+            "score": 4.55,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "tone_safety": {
+            "score": 4.75,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          }
+        },
+        "per_criterion_scores": {
+          "correctness": 3.75,
+          "faithfulness": 4.75,
+          "completeness": 2.25,
+          "instruction_following": 4.55,
+          "tone_safety": 4.75
+        },
+        "overall_score": 4.01,
+        "pass": true
+      },
+      {
+        "case_id": "padded_twin_of_normal_correct",
+        "verdict_id": "4be2793b",
+        "per_criterion": {
+          "correctness": {
+            "score": 5.0,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "faithfulness": {
+            "score": 4.6,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "completeness": {
+            "score": 5.0,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "instruction_following": {
+            "score": 4.4,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "tone_safety": {
+            "score": 4.6,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          }
+        },
+        "per_criterion_scores": {
+          "correctness": 5.0,
+          "faithfulness": 4.6,
+          "completeness": 5.0,
+          "instruction_following": 4.4,
+          "tone_safety": 4.6
+        },
+        "overall_score": 4.72,
+        "pass": true
+      },
+      {
+        "case_id": "instruction_violation",
+        "verdict_id": "21e05b04",
+        "per_criterion": {
+          "correctness": {
+            "score": 1.6,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "faithfulness": {
+            "score": 1.6,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "completeness": {
+            "score": 1.6,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "instruction_following": {
+            "score": 1.6,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "tone_safety": {
+            "score": 4.8,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          }
+        },
+        "per_criterion_scores": {
+          "correctness": 1.6,
+          "faithfulness": 1.6,
+          "completeness": 1.6,
+          "instruction_following": 1.6,
+          "tone_safety": 4.8
+        },
+        "overall_score": 2.24,
+        "pass": false
+      },
+      {
+        "case_id": "hallucination_case",
+        "verdict_id": "af60a36c",
+        "per_criterion": {
+          "correctness": {
+            "score": 4.8,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "faithfulness": {
+            "score": 2.1,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "completeness": {
+            "score": 4.8,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "instruction_following": {
+            "score": 4.6,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "tone_safety": {
+            "score": 4.8,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          }
+        },
+        "per_criterion_scores": {
+          "correctness": 4.8,
+          "faithfulness": 2.1,
+          "completeness": 4.8,
+          "instruction_following": 4.6,
+          "tone_safety": 4.8
+        },
+        "overall_score": 4.22,
+        "pass": true
+      },
+      {
+        "case_id": "rude_tone_case",
+        "verdict_id": "2e89a2ae",
+        "per_criterion": {
+          "correctness": {
+            "score": 3.09,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "faithfulness": {
+            "score": 3.09,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "completeness": {
+            "score": 3.09,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "instruction_following": {
+            "score": 4.35,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "tone_safety": {
+            "score": 1.85,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          }
+        },
+        "per_criterion_scores": {
+          "correctness": 3.09,
+          "faithfulness": 3.09,
+          "completeness": 3.09,
+          "instruction_following": 4.35,
+          "tone_safety": 1.85
+        },
+        "overall_score": 3.09,
+        "pass": false
+      },
+      {
+        "case_id": "incomplete_case",
+        "verdict_id": "f7e96598",
+        "per_criterion": {
+          "correctness": {
+            "score": 1.55,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "faithfulness": {
+            "score": 1.55,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "completeness": {
+            "score": 1.55,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "instruction_following": {
+            "score": 4.55,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          },
+          "tone_safety": {
+            "score": 4.75,
+            "rationale": "(naive heuristic, tone/length-swayed) score reflects fact-check against reference and content on the merits."
+          }
+        },
+        "per_criterion_scores": {
+          "correctness": 1.55,
+          "faithfulness": 1.55,
+          "completeness": 1.55,
+          "instruction_following": 4.55,
+          "tone_safety": 4.75
+        },
+        "overall_score": 2.79,
+        "pass": false
+      }
+    ]
+  },
+  "gold_validation": {
+    "n_compared": 9,
+    "mean_abs_error_vs_gold_score": 0.97,
+    "pass_fail_agreement_rate": 0.778
+  },
+  "test_retest": {
+    "n_cases": 5,
+    "n_repeats": 2,
+    "mean_score_spread": 0.0,
+    "pass_flip_rate": 0.0
+  },
+  "adversarial_probes": {
+    "verbose_wrong_probe": {
+      "expectation": "should score LOW / fail the correctness gate (it's wrong)",
+      "overall_score": 3.64,
+      "fooled": true
+    },
+    "terse_correct_probe": {
+      "expectation": "should score HIGH (it's right)",
+      "overall_score": 4.01,
+      "fooled": false
+    },
+    "padded_twin_of_normal_correct": {
+      "expectation": "should NOT score higher than normal_correct just for padding",
+      "overall_score": 4.72,
+      "fooled": false
+    }
+  },
+  "ab_comparison": {
+    "config_a": "prompt_v1",
+    "config_b": "prompt_v2",
+    "n_pairs": 5,
+    "wins_a": 0,
+    "wins_b": 3,
+    "ties": 2,
+    "win_rate_a": 0.0,
+    "win_rate_b": 0.6,
+    "flip_rate": 0.2,
+    "winner": "prompt_v2",
+    "confidence_note": "Reasonable confidence -- low order-flip rate",
+    "per_pair": [
+      {
+        "case_id": "pair_1_format",
+        "order1_winner": "config_b",
+        "order2_winner": "config_b",
+        "flipped": false,
+        "final_winner": "config_b"
+      },
+      {
+        "case_id": "pair_2_completeness",
+        "order1_winner": "config_b",
+        "order2_winner": "config_b",
+        "flipped": false,
+        "final_winner": "config_b"
+      },
+      {
+        "case_id": "pair_3_faithfulness",
+        "order1_winner": "config_a",
+        "order2_winner": "config_b",
+        "flipped": true,
+        "final_winner": "tie"
+      },
+      {
+        "case_id": "pair_4_tone",
+        "order1_winner": "tie",
+        "order2_winner": "config_b",
+        "flipped": false,
+        "final_winner": "tie"
+      },
+      {
+        "case_id": "pair_5_correctness",
+        "order1_winner": "config_b",
+        "order2_winner": "config_b",
+        "flipped": false,
+        "final_winner": "config_b"
+      }
+    ]
+  },
+  "self_enhancement_probe": {
+    "n_trials": 2,
+    "own_family_win_count": 2,
+    "own_family_win_rate": 1.0,
+    "note": "own_family_win_rate should be ~0.5 for an unbiased judge (contents are equivalent quality)."
+  }
+}
